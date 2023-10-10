@@ -30,7 +30,7 @@
 namespace faiss {
 
 #if defined(__x86_64__)
-bool use_avx512 = true;
+bool use_avx512 = false;
 bool use_avx2 = true;
 bool use_sse4_2 = true;
 #endif
