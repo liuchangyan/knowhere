@@ -57,12 +57,12 @@ std::string
 KnowhereConfig::SetSimdType(const SimdType simd_type) {
 #ifdef __x86_64__
     if (simd_type == SimdType::AUTO) {
-        faiss::use_avx512 = true;
+        faiss::use_avx512 = false;
         faiss::use_avx2 = true;
         faiss::use_sse4_2 = true;
         LOG_KNOWHERE_INFO_ << "FAISS expect simdType::AUTO";
     } else if (simd_type == SimdType::AVX512) {
-        faiss::use_avx512 = true;
+        faiss::use_avx512 = false;
         faiss::use_avx2 = true;
         faiss::use_sse4_2 = true;
         LOG_KNOWHERE_INFO_ << "FAISS expect simdType::AVX512";

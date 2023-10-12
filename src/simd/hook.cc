@@ -70,7 +70,9 @@ fvec_hook(std::string& simd_type) {
     static std::mutex hook_mutex;
     std::lock_guard<std::mutex> lock(hook_mutex);
 #if defined(__x86_64__)
+     LOG_KNOWHERE_INFO_ << "--------------- hook defined x86 use_avx512 is -----------------" << use_avx512;
     if (use_avx512 && cpu_support_avx512()) {
+        LOG_KNOWHERE_INFO_ << "---------------- hook use_avx512 flag is --------------------" << use_avx512;
         fvec_inner_product = fvec_inner_product_avx512;
         fvec_L2sqr = fvec_L2sqr_avx512;
         fvec_L1 = fvec_L1_avx512;
